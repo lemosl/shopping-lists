@@ -53,7 +53,7 @@ input:focus{
    border-color: #055b08;;
 }
 
-button{
+button[type="submit"]{
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
@@ -63,10 +63,23 @@ button{
   cursor: pointer;
   transition: backgroud 0.3s;
 }
-button:hover{
+button[type="submit"]:hover{
   background-color: #0c410f;
 }
 
+button[type="button"]{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #c30808;
+  color:#fff;
+  font-size:16px;
+  cursor: pointer;
+  transition: backgroud 0.3s;
+}
+button[type="button"]:hover{
+  background-color:#055b08;
+}
 table{
 width: 100%;
 border-collapse: collapse;
@@ -84,6 +97,7 @@ th,td{
   padding: 12px;
   text-align: center;
   border: 1px solid #ccc;
+  font-size: 20px;
 }
 
 
@@ -95,4 +109,14 @@ input[type="checkbox"]{
  transform: scale(1.2);
  cursor: pointer;
 
+}
+
+.empty{
+  font-size: 20px;
+  color:  #161414;
+}
+
+.itemPurchased {
+  text-decoration: line-through;
+  color:#055b08;
 }

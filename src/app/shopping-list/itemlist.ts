@@ -5,3 +5,4 @@ export class Itemlist {
   purchased: boolean = false;
 
 }
+ 

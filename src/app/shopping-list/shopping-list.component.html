@@ -7,7 +7,8 @@
                name="item"
                [(ngModel)]="item"
                placeholder="Enter the item name">
-              <button type="submit">Adicionar</button>
+              <button type="submit">Submit</button>
+              <button type="button" (click)="ItemClean()">Delete list</button>
             </form>
 
          <table>
@@ -15,21 +16,29 @@
                  <tr>
                     <th>#</th>
                     <th>Item</th>
-                    <th></th>
+                    <th>Purchased ?</th>
                 </tr>
               </thead>
 
                 <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Arroz</td>
-                      <td><input type="checkbox"></td>
-                  </tr>
-                  <tr>
-                        <td>2</td>
-                        <td>morango</td>
-                        <td><input type="checkbox"></td>
+                 @for (element of list; track element.id ){
+                   <tr>
+                         <td>{{element.id}}</td>
+                         <td>
+                              <span [ngClass]="{'itemPurchased' : element.purchased}">
+                                {{element.name}}
+                              </span>
+                          </td>
+                         <td><input type="checkbox" (click)="ItemAcquired(element)" [checked]="element.purchased"></td>
                     </tr>
+                 }
+
+                 @empty {
+                  <tr class="empty">
+                      There is no record in the list
+                </tr>
+
+                 }
                 </tbody>
             </table>
     </div>
